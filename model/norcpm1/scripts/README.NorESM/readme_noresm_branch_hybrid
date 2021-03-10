@@ -1,0 +1,58 @@
+
+
+
+Generally, the straigth forward procedure of generating branch and
+hybrid runs, starting from an existing NorESM run, is described in
+chapter 9 of the CCSM documentation: 
+
+http://www.ccsm.ucar.edu/models/ccsm4.0/ccsm_doc/book1.html
+
+The procedure should be the same for NorESM and CCSM.
+
+Example:
+
+Assume you want to do a branch run with name CASEBR, starting from the
+date 0090-01-01 of the case CASE1 that has been run by USR1: 
+
+1) Build a new case directory with the the same create_newcase command as used
+   to build case $CASB1
+>  create_newcase $HOME/noresm/cases/$CASBR .........
+
+>  cd $HOME/noresm/cases/$CASBR
+
+2) Change the file env_conf.xml (using xmlchange) to give a branch run
+   starting from the correct dataset at the correct date:
+
+>  xmlchange -file env_conf.xml -id RUN_TYPE    -val branch
+>  xmlchange -file env_conf.xml -id RUN_REFCASE -val $CASE1
+>  xmlchange -file env_conf.xml -id RUN_REFDATE -val 0090-01-01
+
+2b) If you want to change the startdate e.g for a historic run you must use hybrid run set-up
+
+>  xmlchange -file env_conf.xml -id RUN_TYPE    -val hybrid
+>  xmlchange -file env_conf.xml -id RUN_REFCASE -val $CASE1
+>  xmlchange -file env_conf.xml -id RUN_STARTDATE -val 1850-01-01
+The startdate refers to the starting point of your new run
+>  xmlchange -file env_conf.xml -id RUN_REFDATE -val 0090-01-01 
+
+3) Configure and build the case
+
+>  configure -case 
+>  $CASEBR.$MACH.build
+
+# If necessary, edit the Buildconf/$component.buildnml.csh files to
+#  included changes done in $CASE1.
+
+4) Prestage the necessary restart/initial data in $RUNROOT (default is
+   /work/$LOGNAME/noresm/$CASEBR/run in NorESM on hexagon). We assumes
+   that $USR1 has the data stored in /work/$USR1/archive/$CASEBR
+
+> cd $RUNDIR
+> cp /work/$URS1/archive/$CASE1/rest/0090-01-01-00000/* .
+
+5) Start a 2 month test run 
+> cd $HOME/noresm/cases/$CASBR
+> xmlchange -file env_run.xml -id STOP_OPTION -val nmonths
+> xmlchange -file env_run.xml -id STOP_N -val 2
+> qsub $CASEBR.$MACH.run
+

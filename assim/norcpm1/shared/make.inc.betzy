@@ -1,0 +1,38 @@
+LIB_NETCDF= -L/local/netcdf/lib/ -lnetcdf -lnetcdff
+LIB_LAPACK =
+
+INCS = $(INC_NETCDF) $(INC_FFTW)
+LIBS = -mkl=cluster $(LIB_LAPACK) $(LIB_NETCDF) $(LIB_FFTW)
+
+ifeq ($(MPI),YES)
+        CF90 = mpif90
+        CC = mpicc
+	PARO =
+	CPPFLAGS = -DQMPI 
+else
+	CF90 = ifort
+	CC = icc
+	PAR0 = 
+endif
+CF77 = $(CF90)
+LD = $(CF90) 
+CPP = cpp -P -traditional-cpp
+
+CPPARCH = -DIA32 -DFFTW -DNOMPIR8
+CPPFLAGS += $(CPPARCH) -DF90_NOFLUSH
+
+SIZEO = -r8
+
+OPTO = -O2 -align -fp-model source #-fast -fastsse
+ARCHO= -mcmodel=medium
+INLO = -ip
+DIVO = 
+DEBUG_FLAGS = 
+
+FFLAGS = $(SIZEO) $(OPTO) $(ARCHO) $(PARO) $(INLO) $(DIVO) $(DEBUG_FLAGS) $(INCS)
+CFLAGS = $(FFLAGS)
+LINKFLAGS = $(SIZEO) $(OPTO) $(ARCHO) $(PARO) $(INLO) $(DIVO) $(DEBUG_FLAGS) 
+
+# language-specific flags
+F77FLG = -fixed
+F90FLG = -free

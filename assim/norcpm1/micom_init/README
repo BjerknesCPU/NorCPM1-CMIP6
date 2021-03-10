@@ -1,0 +1,26 @@
+micom_ensemble_init
+-------------------
+
+HISTORY  
+ 20180224 (ingo.bethke@uni.no) first version based on micom_serial_init_MPI_V2
+
+BUILD 
+
+  cd micom_ensemble_init/build
+  source setintel
+  make clean 
+  make 
+
+USAGE
+
+ mpirun -n numtask micom_ensemble_init ensemble_size 
+       or 
+ mpirun -n numtask  micom_ensemble_init first_member last_member 
+
+ Note: numtask has to be equal members X tiles (currently set to 16 in dimensions.F) 
+
+EXAMPLE 
+
+ See micom_ensemble_init/run/run_gx1_fram.sh 
+
+

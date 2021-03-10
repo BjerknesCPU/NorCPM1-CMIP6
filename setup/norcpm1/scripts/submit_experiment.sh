@@ -1,0 +1,37 @@
+#!/bin/sh -e
+
+SETUPROOT=`readlink -f \`dirname $0\``
+. $SETUPROOT/scripts/source_settings.sh $*
+
+echo + DETERMINE PES NUMBER FOR ENSEMBLE 
+ENSEMBLE_PREFIX1=${CASE_PREFIX}_${START_YEAR1}${START_MONTH1}${START_DAY1}
+CASE1=${ENSEMBLE_PREFIX1}_${MEMBERTAG}01
+MPPWIDTHOLD=`grep "\-ntasks" $CASESROOT/$ENSEMBLE_PREFIX1/$CASE1/${CASE1}.${MACH}.run | cut -d"=" -f2 | cut -d":" -f1`
+MPPWIDTHNEW=`expr $MPPWIDTHOLD \* $ENSSIZE` 
+NODESNEW=`expr $MPPWIDTHNEW / $TASKS_PER_NODE` 
+if [ $NODESNEW -lt $MIN_NODES ] 
+then 
+  NODESNEW=$MIN_NODES
+elif [ `expr $NODESNEW \* $TASKS_PER_NODE` -lt $MPPWIDTHNEW ] 
+then
+  NODESNEW=`expr $NODESNEW + 1` 
+fi
+
+echo + WRITE ENSEMBLE JOB-SCRIPT 
+JOB_SCRIPT=$CASESROOT/$ENSEMBLE_PREFIX1/$CASE1/${CASE_PREFIX}.runens
+cat <<EOF> $JOB_SCRIPT
+#!/bin/sh -e
+#SBATCH --account=${ACCOUNT}
+#SBATCH --job-name=${CASE_PREFIX}
+#SBATCH --time=${WALLTIME}
+#SBATCH --nodes=${NODESNEW}
+#SBATCH --ntasks=${MPPWIDTHNEW}
+#SBATCH --output=$CASESROOT/$ENSEMBLE_PREFIX1/$CASE1/${CASE_PREFIX}.log_%j
+
+SETUPROOT=${SETUPROOT}
+source ${SETUPROOT}/scripts/run_experiment.sh $* 
+EOF
+
+echo + SUBMIT JOB
+JOBID=`sbatch $JOB_SCRIPT | awk '{print $4}'`
+echo ++ log written to $CASESROOT/$ENSEMBLE_PREFIX1/$CASE1/${CASE_PREFIX}.log_$JOBID

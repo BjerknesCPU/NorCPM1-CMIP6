@@ -1,0 +1,17 @@
+ Attempting to initialize control settings .....
+ error: namelist input resulted in error code           19
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+mksurfdata         00000000005799E5  Unknown               Unknown  Unknown
+mksurfdata         00000000005777A7  Unknown               Unknown  Unknown
+mksurfdata         000000000052BD34  Unknown               Unknown  Unknown
+mksurfdata         000000000052BB46  Unknown               Unknown  Unknown
+mksurfdata         00000000004C6D06  Unknown               Unknown  Unknown
+mksurfdata         00000000004CA5F0  Unknown               Unknown  Unknown
+libpthread.so.0    00002B13754415E0  Unknown               Unknown  Unknown
+libc.so.6          00002B137575B121  Unknown               Unknown  Unknown
+mksurfdata         00000000004BA5C9  Unknown               Unknown  Unknown
+mksurfdata         000000000048456F  MAIN__                    202  mksrfdat.F90
+mksurfdata         000000000040A22E  Unknown               Unknown  Unknown
+libc.so.6          00002B137566FC05  Unknown               Unknown  Unknown
+mksurfdata         000000000040A129  Unknown               Unknown  Unknown

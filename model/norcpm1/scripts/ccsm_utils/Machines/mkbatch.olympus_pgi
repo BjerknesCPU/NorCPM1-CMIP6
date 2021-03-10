@@ -1,0 +1,89 @@
+#! /bin/csh -f
+
+set mach = olympus_pgi
+
+#################################################################################
+if ($PHASE == set_batch) then
+#################################################################################
+
+source ./Tools/ccsm_getenv || exit -1
+
+set ntasks  = `${UTILROOT}/Tools/taskmaker.pl -sumonly`
+set maxthrds = `${UTILROOT}/Tools/taskmaker.pl -maxthrds`
+@ nodes = $ntasks / ${MAX_TASKS_PER_NODE}
+if ( $ntasks % ${MAX_TASKS_PER_NODE} > 0) then
+  @ nodes = $nodes + 1
+  @ ntasks = $nodes * ${MAX_TASKS_PER_NODE}
+endif
+@ taskpernode = ${MAX_TASKS_PER_NODE} / ${maxthrds}
+set qname = batch
+set tlimit = "00:59:00"
+
+#--- Job name is first fifteen characters of case name ---
+set jobname = `echo ${CASE} | cut -c1-15`
+
+cat >! $CASEROOT/${CASE}.${mach}.run << EOF1
+#!/bin/csh -f
+
+#SBATCH --job-name=${CASE}
+#SBATCH --time=$tlimit
+#SBATCH --nodes=$nodes
+##SBATCH --ntasks=$ntasks
+#SBATCH --cpus-per-task=$maxthrds
+#SBATCH --exclusive
+###SBATCH --mail-type=END
+###SBATCH --mail-user=xyz@abc.com
+#SBATCH --output=slurm.out
+
+EOF1
+
+#################################################################################
+else if ($PHASE == set_exe) then
+#################################################################################
+
+set maxthrds = `${UTILROOT}/Tools/taskmaker.pl -maxthrds`
+set maxtasks = `${UTILROOT}/Tools/taskmaker.pl -sumtasks`
+
+cat >> ${CASEROOT}/${CASE}.${mach}.run << EOF1
+# -------------------------------------------------------------------------
+# Run the model
+# -------------------------------------------------------------------------
+
+sleep 5
+cd \$RUNDIR
+echo "\`date\` -- CSM EXECUTION BEGINS HERE" 
+
+setenv OMP_NUM_THREADS ${maxthrds}
+#mpiexec -n ${maxtasks} ./ccsm.exe >&! ccsm.log.\$LID
+#mpirun -np ${maxtasks} ./ccsm.exe >&! ccsm.log.\$LID
+# for mvapich
+#srun --ntasks=${maxtasks} --cpu_bind=sockets --cpu_bind=verbose --kill-on-bad-exit ./ccsm.exe >&! ccsm.log.\$LID
+# for mvapich2
+srun --mpi=none --ntasks=${maxtasks} --cpu_bind=sockets --cpu_bind=verbose --kill-on-bad-exit ./ccsm.exe >&! ccsm.log.\$LID
+
+wait
+echo "\`date\` -- CSM EXECUTION HAS FINISHED" 
+
+EOF1
+
+
+#################################################################################
+else if ($PHASE == set_larch) then
+#################################################################################
+
+
+   #This is a place holder for a long-term archiving script
+
+
+#################################################################################
+else
+#################################################################################
+
+    echo "mkscripts.$mach"
+    echo "  PHASE setting of $PHASE is not an accepted value"
+    echo "  accepted values are set_batch, set_exe and set_larch"
+    exit 1
+
+#################################################################################
+endif
+#################################################################################

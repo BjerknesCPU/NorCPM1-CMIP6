@@ -1,0 +1,61 @@
+Tag Creator: njn01
+Tag Date:    27 January 2012
+Tag Name:    pop2/branch_tags/cesm1_0_4_rel_tags/cesm1_0_4_n04
+Tag Summary: Import bugfix from pop2 trunk (fixed on trunk 2011-12-01):
+            "Replace dimensioned arrays with assumed-shape arrays in ecosys_mod.F90,
+             in order to work around a subtle compiler issue (detected by an intel compiler)
+             which occurs when the ecosys_mod and any other passive-tracer module with
+             more than two (or three, in our default setup) tracers is compiled and
+             'ecosys' is not active."
+Files Modified: 
+M            32213   source/ecosys_mod.F90
+===============================================================================
+Tag Creator: njn01
+Tag Date:    25 January 2012
+Tag Name:    pop2/branch_tags/cesm1_0_4_rel_tags/cesm1_0_4_n03
+Tag Summary: bugfix for N_HEAT,N_SALT computations (bug only affected cases with nonstandard
+             tavg_contents files; oob cases were not affected by the bug.)
+
+Files Modified: 
+M            32213   source/tavg.F90
+===============================================================================
+Tag Creator: njn01
+Tag Date:    18 November 2011
+Tag Name:    pop2/branch_tags/cesm1_0_4_rel_tags/cesm1_0_4_n02
+Tag Summary: update selected parts of the pop2 development trunk:
+
+        ----------+----------+------------------------------------+--------------+
+        Date      | Developer| Developments                       |  Included?   |
+        ----------+----------+------------------------------------+--------------+
+        2011-08-03 (mvertens) multiple instance capability           -- NO
+        2011-11-01 (jedwards) Bug fix for in overflows for gfortran, --      YES
+                              additional decomp for tx0.1            --      YES
+                              workaround for cray/gemini performance --      YES
+        2011-11-03 (njn01)    TPOWER units correction                --      YES
+        2011-11-09 (klindsay) modify global sum routines (threading) -- NO
+                   (njn01)    restart file format 'bin' --> 'nc'     --      YES
+
+Files Modified: 
+M            32213   source/overflows.F90    (gfortran bugfix)
+M            32213   source/vmix_kpp.F90     (TPOWER units)
+M            32213   bld/pop_decomp.xml      (new tx0.1 decomp)
+M            32213   mpi/gather_scatter.F90  ((workaround for cray/gemini performance issue)
+M            32214   ChangeLog
+M            32213   input_templates/pop2_in_build.csh (restart 'nc' format)
+===============================================================================
+Tag Creator: njn01
+Tag Date:    18 November 2011
+Tag Name:    pop2/branch_tags/cesm1_0_4_rel_tags/cesm1_0_4_n01_cesm1_0_3_n02_ccsm_pop_2_1_20110527
+Tag Summary: First tag on the new cesm1_0_4_rel branch. 
+             This tag is identical to 
+             pop2/branch_tags/cesm1_0_rel_tags/cesm1_0_3_n02_ccsm_pop_2_1_20110527
+             with the exception of this ChangeLog file.
+            
+Files Modified: 
+M            32213   ChangeLog
+===============================================================================
+1) This branch began with an identical copy of the
+   pop2/branch_tags/cesm1_0_rel_tags/cesm1_0_3_n02_ccsm_pop_2_1_20110527 tag. 
+
+2) The ChangeLog file was changed, then the first tag was made.
+===============================================================================

@@ -1,0 +1,47 @@
+================================================================================
+ SVN $Id: ChangeLog 33582 2012-01-12 20:48:41Z dfeddema@ucar.edu $
+ SVN $URL: https://svn-ccsm-models.cgd.ucar.edu/dlnd7/branch_tags/cesm1_0_4_rel_tags/cesm1_0_4_n02_dlnd8_110419/ChangeLog $
+================================================================================
+This file describes what main-trunk tags were created and why
+================================================================================
+Originator: dfeddema
+Date: Thur Jan 12 2012
+Model: dlnd7
+Version: cesm1_0_4_n02_dlnd8_110419
+One-line summary: Fix build-streams argument in dlnd.cpl7.template 
+ 
+M            33581   bld/dlnd.cpl7.template
+
+-$UTILROOT/Tools/build_streams -t dlnd.template.streams.xml -s RUNOFF.RX1  >> $CASEBUILD/dlnd.buildnml.csh || exit 3
++$UTILROOT/Tools/build_streams -t dlnd.template.streams.xml -s RUNOFF.DIATREN.ANN.RX1  >> $CASEBUILD/dlnd.buildnml.csh || exit 3
+
+Notes: 
+o "RUNOFF.RX1" argument to build_streams is replaced by "RUNOFF.DIATREN.ANN.RX1" 
+
+================================================================================
+Originator: kauff
+Date: Mon Nov 14 2011
+Model: dlnd7
+Version: cesm1_0_4_n01_dlnd8_110419
+One-line summary: new DLND_RUNOFF_MODE options
+
+M       bld/dlnd.cpl7.template
+M       bld/dlnd.template.streams.xml
+M       dlnd_comp_mod.F90
+
+-else if ($DLND_RUNOFF_MODE  == "RX1" ) then
++else if ($DLND_RUNOFF_MODE  == "DIATREN_ANN_RX1" ) then
++else if ($DLND_RUNOFF_MODE  == "DIATREN_IAF_RX1" ) then
+
+Notes: 
+o "RX1" is renamed "DIATREN_ANN_RX1", the IAF option is new
+o requires corresponding changes in scripts & coupler/bld
+
+================================================================================
+Date: May 19 2011
+Model: dlnd7
+Version: cesm1_0_3_n01_dlnd8_110419
+
+Version of dlnd found in cesm1.0.3 release
+
+================================================================================

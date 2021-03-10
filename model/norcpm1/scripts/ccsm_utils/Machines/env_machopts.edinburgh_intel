@@ -1,0 +1,36 @@
+#! /bin/csh -f
+
+#===============================================================================
+# Edinburgh machine specific settings
+#===============================================================================
+
+#-------------------------------------------------------------------------------
+# Platform-specific software versions/locations
+#-------------------------------------------------------------------------------
+
+setenv INTEL /usr/local/intel-cluster-3.2.02
+
+setenv NETCDF_PATH /usr/local/netcdf-3.6.3-intel-3.2.02
+setenv INC_NETCDF ${NETCDF_PATH}/include
+setenv LIB_NETCDF ${NETCDF_PATH}/lib
+
+if ($USE_MPISERIAL == "FALSE") then
+   setenv MPICH_PATH /usr/local/mvapich-intel-cluster
+   setenv INC_MPI ${MPICH_PATH}/include
+   setenv LIB_MPI ${MPICH_PATH}/lib
+else
+   setenv MPICH_PATH 
+endif
+
+#-------------------------------------------------------------------------------
+# Runtime environment variables
+#-------------------------------------------------------------------------------
+
+setenv PATH ${INTEL}/fc/11.0.074/bin/intel64:${INTEL}/cc/11.0.074/bin/intel64:${MPICH_PATH}/bin:${PATH}
+setenv LD_LIBRARY_PATH ${INTEL}/cc/11.0.074/lib/intel64:${INTEL}/fc/11.0.074/lib/intel64:/usr/local/mvapich-intel-cluster/lib:/usr/local/mvapich-intel-cluster/lib/shared:${LD_LIBRARY_PATH}
+setenv P4_GLOBMEMSIZE 500000000
+
+
+
+
+

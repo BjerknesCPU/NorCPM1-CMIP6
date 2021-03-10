@@ -1,0 +1,220 @@
+================================================================================
+SVN $Id: ChangeLog 34524 2012-02-08 18:35:47Z dfeddema@ucar.edu $
+SVN $URL: https://svn-ccsm-models.cgd.ucar.edu/scripts/branch_tags/cesm1_0_4_rel_tags/cesm1_0_4_n13_scripts4_110531b/ChangeLog $
+================================================================================
+This file describes what tags were created and why
+================================================================================
+Originator: dfeddema
+Date: Feb 08, 2012
+Model: scripts
+Version: cesm1_0_4_n13_scripts4_110531b
+One-line:  modify FWX test to use grid f19_f19, update user's guide tables, add f19_f19.FWX to scientifically supported list     
+
+M            34522   ccsm_utils/Case.template/config_compsets.xml
+M            34522   ccsm_utils/Testlists/lynx.pretag
+M            34522   ccsm_utils/Testlists/bluefire.pretag
+M            34522   doc/machines_list.xml
+M            34522   doc/compsets_list.xml
+M            34522   ChangeLog
+M            34522   README
+
+================================================================================
+Originator: edwards
+Date: Feb 01, 2012
+Model: scripts
+Version: cesm1_0_4_n12_scripts4_110531b
+One-line:  update hopper configuration
+
+M            34272   ccsm_utils/Machines/mkbatch.hopper
+M            34272   ccsm_utils/Machines/config_pes.xml
+M            34272   doc/machines_list.xml
+
+================================================================================
+Originator: edwards
+Date: Jan 30, 2012
+Model: scripts
+Version: cesm1_0_4_n11_scripts4_110531b
+One-line:  update titan configuration, and bluefire FWX layout
+M            34204   ccsm_utils/Machines/env_machopts.titan
+M            34204   ccsm_utils/Machines/config_pes.xml
+
+================================================================================
+Originator: fischer
+Date: Jan 26, 2012
+Model: scripts
+Version: cesm1_0_4_n10_scripts4_110531b
+One-line:  remove F_1850_chem and F_2000_chem compsets
+
+M       ccsm_utils/Case.template/config_compsets.xml
+
+================================================================================
+Originator: tcraig
+Date: Jan 25, 2012
+Model: scripts
+Version: cesm1_0_4_n09_scripts4_110531b
+One-line:  port to olympus (_pgi and _intel), remove columbia
+
+A       ccsm_utils/Machines/Macros.olympus_intel
+D       ccsm_utils/Machines/Macros.prototype_columbia
+D       ccsm_utils/Machines/env_machopts.prototype_columbia
+A       ccsm_utils/Machines/mkbatch.olympus_pgi
+D       ccsm_utils/Machines/mkbatch.prototype_columbia
+A       ccsm_utils/Machines/env_machopts.olympus_pgi
+D       ccsm_utils/Machines/mkbatch.midnight
+A       ccsm_utils/Machines/env_machopts.olympus_intel
+D       ccsm_utils/Machines/Macros.midnight
+D       ccsm_utils/Machines/env_machopts.midnight
+A       ccsm_utils/Machines/Macros.olympus_pgi
+M       ccsm_utils/Machines/config_pes.xml
+M       ccsm_utils/Machines/config_machines.xml
+A       ccsm_utils/Machines/mkbatch.olympus_intel
+D       ccsm_utils/Testlists/midnight.auxtest
+A       ccsm_utils/Testlists/olympus_intel.auxtest
+A       ccsm_utils/Testlists/olympus_pgi.auxtest
+================================================================================
+Originator: jedwards
+Date: Jan 24, 2012
+Model: scripts
+Version: cesm1_0_4_n08_scripts4_110531b
+One-line:  port to janus and hopper update (renamed from hopp2)
+	A         ccsm_utils/Machines/env_machopts.janus
+        A         ccsm_utils/Machines/Macros.janus
+        A         ccsm_utils/Machines/mkbatch.janus
+        M         ccsm_utils/Machines/config_pes.xml
+	M         ccsm_utils/Machines/config_machines.xml
+	A         ccsm_utils/Testlists/janus.pretag
+        D            34072   ccsm_utils/Machines/mkbatch.hopp2
+        D            34072   ccsm_utils/Machines/Macros.hopp2
+        R  +             -   ccsm_utils/Machines/Macros.hopper
+        R  +             -   ccsm_utils/Machines/env_machopts.hopper
+        R  +             -   ccsm_utils/Machines/mkbatch.hopper
+        M   S        34072   ccsm_utils/Machines/config_pes.xml
+        M            34072   ccsm_utils/Machines/config_machines.xml
+        D            34072   ccsm_utils/Machines/env_machopts.hopp2
+        R  +             -   ccsm_utils/Testlists/hopper.posttag
+        D            34072   ccsm_utils/Testlists/hopp2.posttag
+	
+================================================================================
+
+Originator: dfeddema 
+Date: Jan 23, 2012
+Model: scripts
+Version: cesm1_0_4_n07_scripts4_110531b
+One-line:  change pe layout for FWX grid f19_g16 on bluefire (run on 4 nodes), and add FWX to lynx pre-tag testing list 
+
+M            34036   ccsm_utils/Machines/config_pes.xml
+M            34036   ccsm_utils/Testlists/lynx.pretag
+
+================================================================================
+Originator: njn01
+Date: Jan 18, 2012
+Model: scripts
+Version: cesm1_0_4_n06_scripts4_110531b
+One-line:  Update documentation (CCSM4 references --> CESM1)
+
+M            33894   doc/chap2.xml
+M            33894   doc/chap5.xml
+M            33894   doc/chap6.xml
+M            33894   doc/chap7.xml
+M            33894   doc/glossary.xml
+M            33894   doc/chap9.xml
+
+================================================================================
+Originator: jedwards
+Date: Jan 13, 2012
+Model: scripts
+Version: cesm1_0_4_n05_scripts4_120113
+One-line:  Port to titan 
+
+Sending        ccsm_utils/Machines/config_machines.xml
+Sending        ccsm_utils/Machines/config_pes.xml
+Deleting       ccsm_utils/Machines/Macros.jaguar
+Deleting       ccsm_utils/Machines/Macros.jaguarpf
+Deleting       ccsm_utils/Machines/env_machopts.jaguar
+Deleting       ccsm_utils/Machines/env_machopts.jaguarpf
+Deleting       ccsm_utils/Machines/mkbatch.jaguar
+Deleting       ccsm_utils/Machines/mkbatch.jaguarpf
+Deleting       ccsm_utils/Testlists/jaguar.cam.auxtest
+Deleting       ccsm_utils/Testlists/jaguar.esmf.auxtest
+Deleting       ccsm_utils/Testlists/jaguar.posttag
+Deleting       ccsm_utils/Testlists/jaguar.pretag
+Deleting       ccsm_utils/Testlists/jaguarpf.clm.auxtest
+Deleting       ccsm_utils/Testlists/jaguarpf.esmf.auxtest
+Deleting       ccsm_utils/Testlists/jaguarpf.esmf.release
+Deleting       ccsm_utils/Testlists/jaguarpf.posttag
+Deleting       ccsm_utils/Testlists/jaguarpf.pretag
+Adding         ccsm_utils/Machines/Macros.titan
+Adding         ccsm_utils/Machines/env_machopts.titan
+Adding         ccsm_utils/Machines/mkbatch.titan
+Adding         ccsm_utils/Testlists/titan.clm.auxtest
+Adding         ccsm_utils/Testlists/titan.esmf.auxtest
+Adding         ccsm_utils/Testlists/titan.esmf.release
+Adding         ccsm_utils/Testlists/titan.posttag
+Adding         ccsm_utils/Testlists/titan.pretag
+
+
+M       ccsm_utils/Testlists/jaguarpf.clm.auxtest
+================================================================================
+Originator: erik
+Date: Dec 01 2011
+Model: scripts
+Version: cesm1_0_4_n04_scripts4_110531b
+One-line:  Fix clm test list
+
+M       ccsm_utils/Testlists/jaguarpf.clm.auxtest
+
+================================================================================
+Originator: erik
+Date: Nov 29 2011
+Model: scripts
+Version: cesm1_0_4_n03_scripts4_110531b
+One-line:  Fix CLMQIAN path for bluefire
+
+M       ccsm_utils/Machines/config_machines.xml
+
+================================================================================
+Originator: erik
+Date: Mon Nov 22 2011
+Model: scripts
+Version: cesm1_0_4_n02_scripts4_110531b
+One-line:  Fix some issues from cesm1_0_3
+
+ - Update perl5lib 
+  -- Fix configure hang problem wtih bad user_nl_* namelist file
+ - Update PTCLM
+  -- Fix US-UMB site soil data
+  -- Fix problem with transient compsets for PTCLM
+ - Change default DATM_CPL_CASE for I1850SPINUPCN compset to b40.1850.track1.1deg.006a
+ - Change ESMF library path on bluefire points to a permanent area
+ - Change references to /ptmp on machine Lynx env_build.xml and env_run.xml 
+   to /glade/scratch
+ - Turn CN on in compsets: E_2000_CN_GLC, E_1850_CN_GLC, F_AMIP_CAM5_CN, F_1850_CN_GLC
+   as they should!
+
+ - Change path for DIN_LOC_ROOT_CLMQIAN to be under DIN_LOC_ROOT on bluefire/edinburgh
+   and lynx.
+
+M       ccsm_utils/Case.template/config_compsets.xml
+M       ccsm_utils/Machines/config_machines.xml
+
+================================================================================
+Originator: kauff
+Date: Mon Nov 21 15:00:40 MST 2011
+Model: scripts
+Version: cesm1_0_4_n01_scripts4_110531b
+One-line:  Add support for compsets: CIAF, DIAF, GIAF, FWX
+
+M       ccsm_utils/Case.template/config_compsets.xml
+M       ccsm_utils/Case.template/config_definition.xml
+M       ccsm_utils/Testlists/bluefire.pretag
+
+================================================================================
+Originator: kauff
+Date: Mon Nov 21 11:09:59 MST 2011
+Model: scripts
+Version: cesm1_0_4_n00_scripts4_110531b
+One-line: Identical to code in cesm1.0.3 release
+
+svn cp $SVN/scripts/branch_tags/cesm1_0_rel_tags/cesm1_0_3_n02_scripts4_110531b $SVN/scripts/branches/cesm1_0_4_rel
+
+================================================================================

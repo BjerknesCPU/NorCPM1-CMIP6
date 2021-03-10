@@ -1,0 +1,54 @@
+#! /bin/csh 
+
+#===============================================================================
+# Hexagon machine specific settings
+#===============================================================================
+
+#-------------------------------------------------------------------------------
+# Modules
+#-------------------------------------------------------------------------------
+
+# we need this because of the ugly /bin/csh -f all over
+if (-e /cluster/software/lmod/lmod/init/csh) then
+  source /cluster/software/lmod/lmod/init/csh
+else if (-e /cluster/installations/lmod/lmod/init/csh) then
+  source /cluster/installations/lmod/lmod/init/csh
+endif
+
+module --quiet restore system
+module load StdEnv
+module load netCDF-Fortran/4.5.2-iompi-2020a
+module load iompi/2020a
+module load imkl/2020.1.217-iompi-2020a 
+module load CMake/3.12.1
+
+#-------------------------------------------------------------------------------
+# Runtime environment variables
+#-------------------------------------------------------------------------------
+
+setenv I_MPI_COMPATIBILITY 3
+
+setenv MPICH_MAX_SHORT_MSG_SIZE 960000 # default is 128000 bytes
+setenv MPICH_PTL_UNEX_EVENTS     90000 # default is  90000 (unexpected recv queue size)
+setenv MPICH_UNEX_BUFFER_SIZE     600M # default is    60M (unexpected short msgs buff size)
+setenv MPICH_MSGS_PER_PROC      160000 # default is  32768
+setenv MPICH_PTL_SEND_CREDITS       -1
+setenv MPICH_ENV_DISPLAY 1
+setenv MPICH_VERSION_DISPLAY 1
+
+# These environment variables were suggested by Helen He to help get around compiler issues
+# with pgi9
+setenv MALLOC_MMAP_MAX_ 0
+setenv MALLOC_TRIM_THRESHOLD_ 536870912
+
+# The environment variables below produce corefiles and maybe (?) should be
+# moved to DEBUG mode at some point
+setenv MPICH_DBMASK 0x200
+setenv decfort_dump_flag Y
+limit coredumpsize unlimited
+limit stacksize unlimited
+
+# The environment variable below increase the stack size, which is necessary for
+# CICE to run threaded on this machine.  
+#setenv KMP_STACKSIZE 64M
+setenv OMP_STACKSIZE 64M

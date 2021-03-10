@@ -1,0 +1,43 @@
+================================================================================
+ SVN $Id: ChangeLog 32355 2011-11-22 22:37:46Z erik $
+ SVN $URL: https://svn-ccsm-models.cgd.ucar.edu/datm7/branch_tags/cesm1_0_4_rel_tags/cesm1_0_4_n02_datm8_110517b/ChangeLog $
+================================================================================
+This file describes what tags were created and why
+================================================================================
+Originator: erik
+Date: Tue Nov 22 2011
+Model: datm7
+Version: cesm1_0_4_n02_datm8_110517b
+One-line summary: Update some domain files and set taxmode for CLM1PT mode
+
+get domain files consistent with clm fatmlndfrc files: 
+           T85_T85, T42_T42, T31_T31, f10_f10, f45_45, f19_f19, f09_f09, f05_f05, f02_f02
+  and for CLM1PT files: 1x1_tropicAtl, 1x1_camdenNJ, 1x1_asphaltjungleNJ
+        - Change taxmode for CLM1PT mode
+
+M       bld/datm.cpl7.template
+
+================================================================================
+Originator: kauff
+Date: Mon Nov 14 2011
+Model: datm7
+Version: cesm1_0_4_n01_datm8_110517b
+One-line summary: DATM_MODE = CORE2 becomes 'CORE2_NYF', new 'CORE2_IAF' mode
+
+Requires corresponding DATM_MODE changes in scripts
+
+CORE2_NYF equals old CORE2, CORE2_IAF introduces new input stream with time-dependant
+corrections factors.    Also, CORE2 IAF streams extended thru 2007
+
+M       datm_comp_mod.F90
+M       bld/datm.cpl7.template
+M       bld/datm.template.streams.xml
+
+================================================================================
+Date: May 19 2011
+Model: datm7
+Version: cesm1_0_3_n01_datm8_110517b
+
+Version of datm model release in cesm1_0_3
+
+================================================================================

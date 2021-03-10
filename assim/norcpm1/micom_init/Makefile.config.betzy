@@ -1,0 +1,56 @@
+# Target name
+TARGET=micom_init
+
+# Preprocessor defines
+#MYCPPDEFS="-DMPI -UTIMER -UARCTIC -DICEDYN -DLEVITUS2X -DTRC -UATRC -UTKE -UGLS -DIDLAGE -UHAMOCC -UAGG -UANTC14 -U__c_isotopes -UDEBUG -UDIFFAT -UDIFFATMB -UEMS_CO2 -UFB_BGC_OCE -DNOMPI -UPBGC_CK_TIMESTEP -UPCFC -DPDYNAMIC_BGC -UPNETCDF -DRESTART_BGC"
+#MYCPPDEFS="-DMPI -DICEDYN -DLEVITUS2X -DTRC -DIDLAGE -DPNETCDF"
+
+# Fortran compiler
+FC=mpif90
+
+# C compiler
+CC=mpicc
+
+# Linker
+LD=$(FC)
+
+# Archiver
+AR=ar
+
+# Paths to netCDF and hdf5 libraries
+#NETCDF_DIR=
+#HDF5_DIR=
+
+# List of directories and files to be searched for targets and dependencies
+TDLIST=../src 
+
+# Include directory for modules
+MODINC=
+
+# Directory list to search for library files
+#LIBS=-lnetcdf -lnetcdff -lpnetcdf
+LIBS=-lnetcdf -lnetcdff 
+
+# External names
+EXTNAME=
+
+# Preprocessor flags
+CPPFLAGS=
+
+# Compiler flags
+#FFLAGS=-g -real-size 64 -fp-model strict -convert big_endian -assume byterecl -ftz -traceback -check all -fpe0 -ftrapuv -fp-stack-check -debug
+#FFLAGS=-g -real-size 64 -fp-model strict -ftz -traceback -check all -fpe0 -ftrapuv -fp-stack-check -debug
+FFLAGS=-real-size 64 -fp-model source -ftz -O2 -align
+SFFLAGS=
+#SF90FLAGS=-free
+CFLAGS=-fp-model source
+
+# Linker flags
+LDFLAGS=-g $(LIBS)
+
+# Archiver flags
+ARFLAGS=-r
+
+all: $(TARGET)
+depend:
+	mkmf -c $(MYCPPDEFS) -f -p $(TARGET) -t Makefile.config $(TDLIST)

@@ -1,0 +1,14 @@
+Due to CMIP5 requirements, NorESM differs from CCSM4 in how it deals
+with high frequency output.
+
+- CICE and MICOM is configured by default to write all necessary fields.
+
+- CAM and CLM is configured by default to output all necessary monthly
+  and daily fields for CMIP5 relevant component sets, while 3 and 6
+  hours diagnostics must be enabled by the individual user due to its
+  impact on storage space and execution performance. To enable CAM and
+  CLM 3 and 6 hours diagnostics, copy
+  $CCSMROOT/models/atm/cam/bld/namelist_files/use_cases/noresm_hifreqio_nl
+  to $CASEROOT/user_nl_cam and copy
+  $CCSMROOT/models/lnd/clm/bld/namelist_files/use_cases/noresm_hifreqio_nl
+  to $CASEROOT/user_nl_clm, respectively. 

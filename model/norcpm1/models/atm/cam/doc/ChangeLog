@@ -1,0 +1,102 @@
+Tag name: cesm1_0_4_n09_cam5_1_04
+Originator(s): liuh, joemci, fischer, eaton, santos
+Date: Thu Jan 25 13:36:14 MDT 2012
+One-line Summary: Tag for cesm1_0_4 release.
+
+
+New features in CAM5.1.1
+========================
+
+. Added WACCM-X. WACCM-X is the extension of WACCM/CAM from the lower
+  thermosphere to the top of the thermosphere.
+
+. COSP updates.  Included changes are:
+  - made several high-level namelist variables that control COSP.
+    The new options are all meant to reduce cost by running with fewer
+    subcolumns (10) and by only running cosp every 3rd time the
+    radiation is run.  The new variables are:
+    cosp_amwg
+    cosp_lite
+    cosp_passive
+    cosp_active
+    cosp_isccp
+  - change the default mode from cosp_runall to cosp_amwg.  Add cosp_runall
+    to the namelist so this mode can still be specified.
+  - changed default for cosp_histfile_num from '2' to '1'.
+  - changed sub-column outputs to avoid crashes when you specify
+    outputs as 'A' on a monthly history file.  The subcolumn output is only
+    on by default when explicitly requested via setting either
+    cosp_lfrac_out=.true. or cosp_runall=.true.
+  - made COSP compatible with fincl1lonlat -- so that you can run
+    COSP and save COSP outputs locally.
+  - Add checks to keep rain_cv and snow_cv above 0.0
+  - Fixed restart bug.
+
+Code cleanup and refactoring:
+=============================
+
+. A reference pressure module has been added and remaining references in
+  the physics package to the hybrid vertical coordinates have been
+  removed.  The physics package should only need information about the
+  pressures at layer midpoints and interfaces.  It should not depend in any
+  way on the vertical coordinate used by the dynamical core.
+
+. The prescribed aerosol data modules were extended to be able to read in
+  modal aerosol concentrations and aerosol deposition fluxes.  This was
+  done to facilitate development of prescribed Modal Aerosol Model
+  configurations (in progress).
+
+. Code refactored for memory reduction in chemistry/mozart/mo_drydep.F90
+  and physics/cam/radae.F90
+
+. Removed CAM specific print_memusage messages
+
+. CAM build system checks for the existence of a netcdff library
+
+. mkDepends was modified to relax the restrictions on source file name
+  matching module name, and only one module per source file.
+
+. For WACCM-SC, removed QTHERMAL, QRS_AUR, QRS_CO2NIR, QRS_EUV, from the
+  output files
+
+Bugs fixed:
+===========
+
+. Added bug fix to no longer add eddy diffusion coefficient to molecular
+  diffusion coefficient and eliminated redundant code.
+
+. Bug fix to make restart history files double precision.
+
+. Fixed a restart problem that occurs when empty_htapes=.true. in some
+  configurations.  Seems to be a problem that occurs with multiple history
+  file output.
+
+. Correction to local-time averaged history output.
+
+. Correction to sathist output of dynamics decomposed variables on
+  the HOMME grid.
+
+. Bug fixed for column data using the collect_column_output option when the
+  same number of columns (but different locations) was used on multiple
+  history files.
+
+. Work around for mpi_rsend bug on the Gemini interconnect.  The Gemini
+  interconnect has a performance bug for mpi_rsend and mpi_irsend.  CPP
+  flag _NO_MPI_RSEND was added so that MPI_RSEND and MPI_IRSEND can be
+  redefined to MPI_SEND.  _NO_MPI_RSEND is only set within the CESM
+  scripts.
+
+. Fixed the diagnostic output for effective gw diffusivity in WACCM.
+
+. Added correction to O3 chemical loss rate diagnostic.
+
+. Bugfix for the diagnostic output fields CLDLIQSTR and CLDICESTR.  The
+  previous version was based on state values that did not contain the
+  tendencies from the macrophysics package.
+
+. Allocate statement in mo_drydep.F90 not used and was removed.  It could
+  have caused problems with UNSTRUCTURED grids since the nlon_veg and
+  nlat_veg variables are not defined in that case.
+
+. Fixed timers in tphysbc.F90 and macrop_driver.F90
+

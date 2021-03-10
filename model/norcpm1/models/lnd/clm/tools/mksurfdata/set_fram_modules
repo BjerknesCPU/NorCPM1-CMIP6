@@ -1,0 +1,6 @@
+module --force purge
+module load StdEnv
+module use /cluster/software/modulefiles/easybuild/all
+module load intel/2016a
+module load netCDF/4.4.0-intel-2016a
+module load netCDF-Fortran/4.4.3-intel-2016a

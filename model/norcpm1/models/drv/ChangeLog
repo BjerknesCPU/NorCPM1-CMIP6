@@ -1,0 +1,26 @@
+================================================================================
+ SVN $Id: ChangeLog 32280 2011-11-21 22:05:11Z kauff $
+ SVN $URL: https://svn-ccsm-models.cgd.ucar.edu/drv/seq_mct/branch_tags/cesm1_0_4_rel_tags/cesm1_0_4_n01_drvseq3_1_48/ChangeLog $
+================================================================================
+Information on changes to cpl7
+================================================================================
+Originator: kauff
+Date: Mon Nov 21 14:14:21 MST 2011
+Model: cpl7
+Version: cesm1_0_4_n01_drvseq3_1_48
+One-line summary: Recognizes new DLND_RUNOFF_MODE's:  DIATREN_ANN_RX1, DIATREN_IAF_RX1
+
+Also, fix to generate complete input data file list in Buildconf/cpl.input_data_list
+
+M       bld/cpl.template
+	
+================================================================================
+Originator: kauff
+Date: Mon Nov 21 10:27:28 MST 2011
+Model: cpl7
+Version: cesm1_0_4_n00_drvseq3_1_48
+One-line summary: Identical to code in cesm1.0.3 release
+
+svn cp $SVN/drv/seq_mct/branch_tags/t3148b_tags/t3148b02_drvseq3_1_48 $SVN/drv/seq_mct/branches/cesm1_0_4_rel
+	
+================================================================================

@@ -1,0 +1,6 @@
+&clm_inparm
+ hist_fincl3		= 'QRUNOFF','QSNWCPICE'
+ hist_fincl4		= 'SOILWATER_10CM:I'
+ hist_mfilt		= 1,365,2920,2920
+ hist_nhtfrq		= 0,-24,-3,-3
+/

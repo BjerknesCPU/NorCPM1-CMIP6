@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<namelist_defaults>
+
+<!-- Solar constant from Lean (via Caspar Ammann) -->
+<solar_const>1360.89</solar_const>
+
+<!-- 1850 GHG values from ipcc-ar4-cfcs-1850-2000.xls (Doug Kinnison) -->
+<co2vmr>284.7e-6</co2vmr>
+<ch4vmr>791.6e-9</ch4vmr>
+<n2ovmr>275.68e-9</n2ovmr>
+<f11vmr>12.48e-12</f11vmr>
+<f12vmr>0.0</f12vmr>
+
+<!-- 1850 BAM data is from Jean-Francois Lamarque -->
+<!-- An older dataset is specified to preserve answers for the 1 degree climotology run -->
+<prescribed_aero_datapath>atm/cam/chem/trop_mozart_aero/aero</prescribed_aero_datapath>
+<prescribed_aero_file                 >aero_1.9x2.5_L26_1850clim_c091112.nc</prescribed_aero_file>
+<prescribed_aero_file hgrid="0.9x1.25">aero_1.9x2.5_L26_1850clim_c090420.nc</prescribed_aero_file>
+<prescribed_aero_type>CYCLICAL</prescribed_aero_type>
+<prescribed_aero_cycle_yr>1850</prescribed_aero_cycle_yr>
+
+<!-- aerosol deposition -->
+<aerodep_flx_datapath>atm/cam/chem/trop_mozart_aero/aero</aerodep_flx_datapath>
+<aerodep_flx_file>aerosoldep_monthly_1850_mean_1.9x2.5_c090421.nc</aerodep_flx_file>
+<aerodep_flx_type>CYCLICAL</aerodep_flx_type>
+<aerodep_flx_cycle_yr>1850</aerodep_flx_cycle_yr>
+
+<!-- 1850 ozone data is from Jean-Francois Lamarque -->
+<!-- An older dataset is specified to preserve answers for the 1 degree climotology run -->
+<prescribed_ozone_datapath>atm/cam/ozone</prescribed_ozone_datapath>
+<prescribed_ozone_file                 >ozone_1.9x2.5_L26_1850clim_c091112.nc</prescribed_ozone_file>
+<prescribed_ozone_file hgrid="0.9x1.25">ozone_1.9x2.5_L26_1850clim_c090420.nc</prescribed_ozone_file>
+<prescribed_ozone_name>O3</prescribed_ozone_name>
+<prescribed_ozone_type>CYCLICAL</prescribed_ozone_type>
+<prescribed_ozone_cycle_yr>1850</prescribed_ozone_cycle_yr>
+
+<!-- sim_year used for CLM datasets -->
+<sim_year>1850</sim_year>
+
+
+<!-- NorESM specific values -->
+
+<!-- Low cloud fraction -->
+<cldfrc_rhminl hgrid="1.9x2.5"   phys="cam4"                          > 0.9005D0 </cldfrc_rhminl>
+<cldfrc_rhminl hgrid="48x96"     phys="cam4"                          > 0.865D0 </cldfrc_rhminl>
+
+<!-- High cloud fraction -->
+<cldfrc_rhminh hgrid="48x96"     phys="cam4"                          > 0.800D0 </cldfrc_rhminh>
+
+<!-- Diagnostics -->
+<mfilt>1</mfilt>
+<nhtfrq>0</nhtfrq>
+<do_circulation_diags         >.false.</do_circulation_diags>
+<fincl1 >'SST','Z700','Z500','Z200','Z300','Z100','Z050','U200','U850','V200','V850','T200','T500','T700','T1000','OMEGA500','OMEGA850','ICEFRAC'</fincl1>
+<fexcl1> 'OMEGA','Z3','CLOUD','CLDICE','CLDLIQ','CONCLD','CMFDQ','CMFDQR','ICLDIWP','ICLDTWP','CMFDT','DCQ','DTCOND','FICE','GCLDLWP','QC','TOT_ICLD_VISTAU','UU','VV','VU','VD01','CMFMCDZM','ICIMR','ICWMR','TOT_CLD_VISTAU','VQ','OMEGAT','CMFMC','QRL','QRS','RELHUM','VQ','VT','VS', 'CLDICE','CLDLIQ','CONCLD','CMFDQ','CMFDQR','ICLDIWP','ICLDTWP','CMFDT','DCQ','DTCOND','DTV','FICE','GCLDLWP','QC','UU','VV','VU','ICIMR','ICWMR','VQ','OMEGAT','QRL','QRS','RELHUM','CLOUD','CMFMC','CMFMCDZM','FREQSH','FREQZM','LANDFRAC','LWCF','PCONVB','PCONVT','PHIS','PRECC','PRECCDZM','PRECL','PRECSC','PRECSH','PRECSL','SWCF','TMQ','TREFMNAV','TREFMXAV','TROP_P','TROP_T','TROP_Z','US','VD01','VS','TGCLDIWP','TGCLDLWP','SFCLDICE','SFCLDLIQ','ATMEINT','AEROD_v','OCNFRAC'
+</fexcl1>
+
+</namelist_defaults>

@@ -1,0 +1,32 @@
+#! /bin/csh -f
+
+#===============================================================================
+# Janus machine specific settings
+#===============================================================================
+
+#-------------------------------------------------------------------------------
+# Platform-specific software versions/locations
+#-------------------------------------------------------------------------------
+# Init dotkit if not already done, if DK_ROOT is set preserve it.
+if ( ! $?DK_ROOT ) then
+  setenv DK_ROOT /curc/tools/dotkit
+endif
+
+eval `$DK_ROOT/init -c`
+
+  use -q Moab
+  use -q Torque
+  use -q Perl
+  use -q NCAR-Parallel-PGI
+
+
+#-------------------------------------------------------------------------------
+# Runtime environment variables
+#-------------------------------------------------------------------------------
+setenv NETCDF_PATH ${NETCDF}
+setenv PNETCDF_PATH ${PNETCDF}
+
+setenv OMP_STACKSIZE 64M
+
+
+

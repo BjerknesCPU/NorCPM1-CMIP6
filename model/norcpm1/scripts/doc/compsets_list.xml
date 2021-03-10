@@ -1,0 +1,755 @@
+<table><title>Component Sets</title>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Compset (Shortname)</entry>
+<entry>Details</entry>
+</row>
+</thead>
+<tbody>
+<row> 
+<entry morerows="1" valign="middle">A_PRESENT_DAY (A)</entry>
+<entry>Components: datm,dlnd,dice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: All data model</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_2000 (B)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, present day</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_2000_CN (BCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, present day, with CN (Carbon Nitrogen) in clm</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_CAM5 (B1850C5)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, pre-industrial, cam5 physics</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_CAM5_CN (B1850C5CN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, pre-industrial, cam5 physics, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850 (B1850)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, pre-industrial</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_CN (B1850CN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, pre-industrial, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_CN_GLC (BG1850CN)</entry>
+<entry>Components: cam,clm,cice,pop2,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16 or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_2000_CN_CHEM (B2000CNCHM)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, pre-industrial, with CN (Carbon Nitrogen) in CLM and super_fast_llnl chem in atm</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_CN_CHEM (B1850CNCHM)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, pre-industrial, with CN (Carbon Nitrogen) in CLM and super_fast_llnl chem in atm</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_RAMPCO2_CN (B1850RMCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, pre-industirial with co2 ramp, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850-2000 (B20TR)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, 1850 to 2000 transient</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850-2000_CN (B20TRCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, 1850 to 2000 transient, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850-2000_CN_GLC (BG20TRCN)</entry>
+<entry>Components: cam,clm,cice,pop2,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16 or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850-2000_CN_CHEM (B20TRCNCHM)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, 1850 to 2000 transient, with CN (Carbon Nitrogen) in CLM and super_fast_llnl chem in atm</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850-2000_CAM5 (B20TRC5)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, 1850 to 2000 transient, cam5 physics</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850-2000_CAM5_CN (B20TRC5CN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, 1850 to 2000 transient, cam5 physics, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_2000_CN_GLC (BGCN)</entry>
+<entry>Components: cam,clm,cice,pop2,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16 or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_2000_TROP_MOZART (BMOZ)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, with trop_mozart</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_2000_TROP_MOZART (FMOZ)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: CAM-Chem with cam4 physics, trop_mozart chemistry, and  present day, prescribed ocn/ice with CN in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_2000_WACCM_CN (BWCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, present day, with CN (Carbon Nitrogen) in clm</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_WACCM (B1850W)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, pre-industrial, with waccm</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_WACCM_CN (B1850WCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850-2005_WACCM_CN (B20TRWCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1955-2005_WACCM_CN (B55TRWCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP2.6_WACCM_CN (BRCP26WCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, RCP2.6 future scenario, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP4.5_WACCM_CN (BRCP45WCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, RCP4.5 future scenario, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP8.5_WACCM_CN (BRCP85WCN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, RCP8.5 future scenario, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP8.5_CN (BRCP85CN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, RCP8.5 future scenario, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP8.5_CN_GLC (BGRCP85CN)</entry>
+<entry>Components: cam,clm,cice,pop2,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP6.0_CN (BRCP60CN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, RCP6.0 future scenario, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP6.0_CN_GLC (BGRCP60CN)</entry>
+<entry>Components: cam,clm,cice,pop2,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16 or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP4.5_CN (BRCP45CN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, RCP4.5 future scenario, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP4.5_CN_GLC (BGRCP45CN)</entry>
+<entry>Components: cam,clm,cice,pop2,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16 or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP2.6_CN (BRCP26CN)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: all active components, RCP2.6 future scenario, with CN (Carbon Nitrogen) in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_RCP2.6_CN_GLC (BGRCP26CN)</entry>
+<entry>Components: cam,clm,cice,pop2,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16 or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_BGC-BPRP (B1850BPRP)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, pre-industrial, CN in CLM, ECO in POP, BGC CO2=prog, rad CO2=prog</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850_BGC-BDRD (B1850BDRD)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: All active components, pre-industrial, CN in CLM, ECO in POP, BGC CO2=diag, rad CO2=diag</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850-2000_BGC-BPRP (B20TRBPRP)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">B_1850-2000_BGC-BDRD (B20TRBDRD)</entry>
+<entry>Components: cam,clm,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">C_NORMAL_YEAR_ECOSYS (CECO)</entry>
+<entry>Components: datm,dlnd,dice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: Active ocean model with ecosys and with COREv2 normal year forcing</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">C_NORMAL_YEAR (C)</entry>
+<entry>Components: datm,dlnd,dice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: Active ocean model with COREv2 normal year forcing</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">C_INTERANNUAL (CIAF)</entry>
+<entry>Components: datm,dlnd,dice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: active ocean model with COREv2 interannual forcing</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">D_NORMAL_YEAR (D)</entry>
+<entry>Components: datm,slnd,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active ice model with COREv2 normal year forcing</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">D_INTERANNUAL (DIAF)</entry>
+<entry>Components: datm,slnd,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: active ice model with COREv2 interannual forcing</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">E_2000 (E)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Fully active cam and ice with som ocean, present day</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">E_2000_CN_GLC (EGCN)</entry>
+<entry>Components: cam,clm,cice,docn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09, f19 or T31)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">E_1850_CN (E1850CN)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Pre-industrial fully active ice and som ocean, with CN</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">E_1850_CN_GLC (EG1850CN)</entry>
+<entry>Components: cam,clm,cice,docn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09, f19 or T31)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">E_1850_CAM5 (E1850C5)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Pre-industrial fully active ice and som ocean, cam5 physics </entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">E_1850_CAM5_CN (E1850C5CN)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Pre-industrial fully active ice and som ocean,  cam5 physics with CN</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_AMIP_CN (FAMIPCN)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: INVALID: AMIP runs not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_AMIP_CAM5 (FAMIPC5)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: INVALID: AMIP runs not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_AMIP_CAM5_CN (FAMIPC5CN)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: INVALID: AMIP runs not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_1850 (F1850)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Pre-industrial cam/clm with prescribed ice/ocn</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_1850_CN_GLC (FG1850CN)</entry>
+<entry>Components: cam,clm,cice,docn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09, f19 or T31)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_1850_CAM5 (F1850C5)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Pre-industrial cam/clm with prescribed ice/ocn, cam5 physics</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_2000 (F)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Stand-alone cam default, prescribed ocn/ice</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_2000_CAM5 (FC5)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Stand-alone cam default, prescribed ocn/ice, cam5 physics</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_2000_CN (FCN)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Stand-alone cam default, prescribed ocn/ice with CN</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_2000_CN_GLC (FGCN)</entry>
+<entry>Components: cam,clm,cice,docn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09, f19 or T31)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_1850-2000_CN (F20TRCN)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: 20th Century transient stand-alone cam default, prescribed ocn/ice, with CN</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_1850-2000_CN_GLC (FG20TRCN)</entry>
+<entry>Components: cam,clm,cice,docn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09, f19 or T31)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_1850_CN_CHEM (F1850CNCHM)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: stand-alone cam/clm, pre-industrial, with CN in CLM, super_fast_llnl chem in cam</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_1850_CN_MAM3 (F1850CNMAM3)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: stand-alone cam/clm, pre-industrial, with CN in CLM, mam3 chem in cam</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_1850_WACCM (F1850W)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Pre-industrial cam/clm with prescribed ice/ocn</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_2000_WACCM (FW)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: present-day cam/clm with prescribed ice/ocn</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_2000_WACCMX (FWX)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: WACCM-X present-day cam/clm with prescribed ice/ocn</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_1955-2005_WACCM_CN (F55WCN)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_2000_WACCM_SC (FWSC)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: WACCM with specified chemistry, prescribed ice/ocn</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_SD_WACCM (FSDW)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: WACCM driven by GEOS5 meteorology with radiation feadbacks turned off</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_SD_CAMCHEM (FSDCHM)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: CAM-Chem driven by GEOS5 meteorology with radiation feadbacks turned off</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_SD_BAM (FSDBAM)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: Bulk aerosols driven by GEOS5 meteorology with radiation feadbacks turned off</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">F_TROP_STRAT_CHEM (FTSC)</entry>
+<entry>Components: cam,clm,cice,docn,sglc</entry>
+</row>
+<row>
+<entry>Description: CAM-Chem with cam4 physics, troposheric/stratospheric interactive chemistry, and  present day, prescribed ocn/ice with CN in CLM</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">G_1850_ECOSYS (G1850ECO)</entry>
+<entry>Components: datm,dlnd,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: 1850 control for pop-ecosystem/cice/datm7/dlnd-rx1</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">G_NORMAL_YEAR (G)</entry>
+<entry>Components: datm,dlnd,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: Coupled ocean ice with COREv2 normal year forcing</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">G_INTERANNUAL (GIAF)</entry>
+<entry>Components: datm,dlnd,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: Coupled ocean ice with COREv2 interannual forcing</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">H_PRESENT_DAY (H)</entry>
+<entry>Components: datm,slnd,cice,pop2,sglc</entry>
+</row>
+<row>
+<entry>Description: Coupled ocean ice slnd</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_TEST_2003 (ITEST)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Test active land model with QIAN atm input data for just 2002-2003 and Satellite phenology (SP), CO2 level and Aerosol deposition for 2000 (BECAUSE OF THE SHORT FORCING PERIOD -- DO NOT USE FOR LONG SIMULATIONS)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_2000 (I)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model with QIAN atm input data for 1972-2004 and Satellite phenology (SP), CO2 level and Aerosol deposition for 2000</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1850 (I1850)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model with QIAN atm input data for 1948 to 1972 and Satellite phenology (SP), CO2 level and Aerosol deposition for 1850</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1850_GLC (IG1850)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16 or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_2000_GLC (IG)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16, or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1948-2004 (I4804)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model with QIAN atm input data for 1948 to 2004 and Satellite phenology (SP), CO2 level and Aerosol deposition for 2000</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1850-2000 (I20TR)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model with QIAN atm input data for 1948 to 1972 and transient Satellite phenology (SP), and Aerosol deposition from 1850 to 2000 and 2000 CO2 level</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1850-2000_GLC (IG20TR)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16, or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_TEST_2003_CN (ICNTEST)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Test active land model with QIAN atm input data for just 2002-2003 and CN (Carbon-Nitrogen), CO2 level and Aerosol deposition for 2000 (BECAUSE OF THE SHORT FORCING PERIOD -- DO NOT USE FOR LONG SIMULATIONS)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_2000_CN (ICN)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model with QIAN atm input data for 1972-2004 and CN (Carbon Nitrogen) biogeochemistry, CO2 level and Aerosol deposition for 2000</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_2000_CN_GLC (IGCN)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16, or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1850_CN (I1850CN)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model with QIAN atm input data for 1948 to 1972 and CN (Carbon Nitrogen) biogeochemistry, CO2 level and Aerosol deposition for 1850</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1850_CN_GLC (IG1850CN)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16, or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1850_SPINUP_3HrWx_CN (I1850SPINUPCN)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model with BCN CPLHIST 3-hourly weather forcing data and half-hourly solar 
+for 1850 spinup of CN (Carbon Nitrogen) biogeochemistry, CO2 level and Aerosol deposition for 1850</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1948-2004_CN (I4804CN)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model with QIAN atm input data for 1948 to 2004 and CN (Carbon Nitrogen) biogeochemistry, CO2 level and Aerosol deposition for 2000</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1850-2000_CN (I20TRCN)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model with QIAN atm input data for 1948 to 1972 and transient CN, Aerosol dep from 1850 to 2000 and 2000 CO2 level</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_1850-2000_CN_GLC (IG20TRCN)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16, or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_RCP8.5_CN (IRCP85CN)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model, RCP8.5 future scenario, with CN in CLM, QIAN atm input data for 1972 to 2004, 2000 CO2 level</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_RCP8.5_CN_GLC (IGRCP85CN)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16, or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_RCP6.0_CN (IRCP60CN)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model, RCP6.0 future scenario, with CN in CLM, QIAN atm input data for 1972 to 2004, 2000 CO2 level</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_RCP6.0_CN_GLC (IGRCP60CN)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16, or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_RCP4.5_CN (IRCP45CN)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model, RCP4.5 future scenario, with CN in CLM, QIAN atm input data for 1972 to 2004, 2000 CO2 level</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_RCP4.5_CN_GLC (IGRCP45CN)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16, or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_RCP2.6_CN (IRCP26CN)</entry>
+<entry>Components: datm,clm,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: Active land model, RCP2.6 future scenario, with CN in CLM, QIAN atm input data for 1972 to 2004, 2000 CO2 level</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">I_RCP2.6_CN_GLC (IGRCP26CN)</entry>
+<entry>Components: datm,clm,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: INVALID: not supported at this resolution (only f09_g16, f19_g16, or T31_g37)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">S_PRESENT_DAY (S)</entry>
+<entry>Components: xatm,slnd,sice,socn,sglc</entry>
+</row>
+<row>
+<entry>Description: All stub models plus xatm</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">T_PRESENT_DAY_GLC (TG)</entry>
+<entry>Components: satm,dlnd,sice,socn,cism</entry>
+</row>
+<row>
+<entry>Description: All stub models plus data land and cism (active ice sheet model)</entry>
+</row>
+<row> 
+<entry morerows="1" valign="middle">X_PRESENT_DAY (X)</entry>
+<entry>Components: xatm,xlnd,xice,xocn,xglc</entry>
+</row>
+<row>
+<entry>Description: All dead model</entry>
+</row>
+</tbody>
+</tgroup>
+</table>

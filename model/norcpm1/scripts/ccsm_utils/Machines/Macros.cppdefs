@@ -1,0 +1,62 @@
+#===============================================================================
+# SVN $Id: Macros.cppdefs 28555 2011-05-20 16:56:22Z fischer $
+# SVN $URL: https://svn-ccsm-models.cgd.ucar.edu/scripts/branch_tags/cesm1_0_4_rel_tags/cesm1_0_4_n13_scripts4_110531b/ccsm_utils/Machines/Macros.cppdefs $
+#===============================================================================
+# set CPP options (must use this before any flags or cflags settings)
+# Scripts build: this file is prepended to the $CASEROOT/Macros.machine file 
+# by create_newcase
+# Cam build: this file is prepended to the $cam_bld/Macros file 
+# by cam's configure
+#===============================================================================
+
+CPPDEFS := $(USER_CPPDEFS)
+
+# USE_ESMF_LIB is currently only defined in env_build.xml
+ifeq ($(USE_ESMF_LIB), TRUE)
+   CPPDEFS += -DUSE_ESMF_LIB
+endif
+
+# ESMF_INTERFACE is currently only defined in env_build.xml
+ifeq ($(COMP_INTERFACE), ESMF)
+   CPPDEFS += -DESMF_INTERFACE
+else
+   CPPDEFS += -DMCT_INTERFACE
+endif
+
+# USE_MPISERIAL is currently only defined in env_conf.xml
+ifeq ($(USE_MPISERIAL),TRUE)
+  # default
+  CPPDEFS += -DNO_MPI2
+else
+  CPPDEFS += -DHAVE_MPI
+endif
+
+# CCSM_BGC is currently only defined in env_conf.xml
+ifneq ($(CCSM_BGC),)
+  ifneq ($(CCSM_BGC),none)
+    CPPDEFS += -D$(CCSM_BGC)
+  endif
+endif
+
+# CCSM_VOC is currently only defined in env_conf.xml
+ifeq ($(CCSM_VOC), TRUE)
+   CPPDEFS += -DVOC
+endif
+
+# GLC_NEC is defined in env_conf.xml
+ifneq ($(GLC_NEC),0)
+   CPPDEFS += -DGLC_NEC_$(GLC_NEC)
+endif
+
+# Set config args for pio and mct to blank and then enable serial 
+# if USE_MPISERIAL (in env_conf) is set
+CONFIG_ARGS :=
+ifeq ($(USE_MPISERIAL),TRUE)
+   CONFIG_ARGS= --enable-mpiserial
+endif
+ifeq ($(MODEL),pio)
+  ifeq ($DEBUG,TRUE)
+     CONFIG_ARGS+= --enable-debug
+  endif
+endif
+
